@@ -1,0 +1,34 @@
+.prato-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(50% - 16px);
+  max-width: 400px;
+  padding: 16px;
+  text-align: left;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-adicionar {
+    display: flex;
+    height: 100%;
+    background-color: yellow;
+    .botao-adicionar {
+      width: 100%;
+    }
+    .botao-adicionar {
+      background-color: #f5f5f5;
+      border: none;
+    }
+    .botao-adicionar:hover {
+      width: 100%;
+      background-color: #bbb;
+    }
+    .sig-mais{
+      font-size: 64px;
+      margin: 1px;
+    }
+    .texto{
+      font-size: large;
+      color:#333
+    }
+  }
