@@ -1,5 +1,6 @@
 import React from "react";
 import "../estilos/DetalhesPrato.css";
+import { Link } from "react-router-dom";
 
 function DetalhesPrato() {
   return (
@@ -21,7 +22,9 @@ function DetalhesPrato() {
           <strong>Descrição da sua experiência Gastronômica:</strong> Sinta o sabor inigualável de nossa feijoada, preparada com ingredientes selecionados e tempero único que te leva à sensação de estar desfrutando dessa experiência gastronômica em uma fazenda lá no interior.
         </p>
       </div>
-      <button onClick={() => {}}>Voltar</button>
+      <Link to="/" className="">
+        <button onClick={() => {}}>Voltar</button>
+      </Link>
     </div>
   </div>
   );

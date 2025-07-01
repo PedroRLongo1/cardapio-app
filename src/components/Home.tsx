@@ -1,22 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../estilos/Home.css";
 import banner from "../assets/banner.webp";
 import CadNovoPrato from "./CadNovoPrato";
+import api from "../services/api"
+import ListaPratos from "./ListaTodosPratos";
 
-import feijoadaImg from "../assets/feijoada.jpg"
 import CardPrato from "./CardPrato";
 
 function Home() {
 
-  const pratos = [
-    {
-      id: 1,
-      nome: "feijoada",
-      cozinha: "Brasileira",
-      descricao: "Feijão com carne de porco",
-      foto: "src/assets/feijoada.jpg"
-    }
-  ]
+  const [ pratos, setpratos ] = useState(
+    [
+      {
+        "id": 0,
+        "nome": "",
+        "cozinha": "",
+        "descricao_resumida": "",
+        "valor": 0
+      }
+    ]
+  )
+
+  useEffect(
+    () => {
+
+      async function requestData() {
+        const request = await api.get('/pratos')
+        const data = request.data
+        setpratos(data)
+      }
+      
+      requestData()
+    }, []
+    
+  )
 
   return (
     <div className="home">
@@ -24,37 +41,19 @@ function Home() {
         <img src={banner} alt="" />
       </div>
       <h1>Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
-        <div className="lista-pratos">
+      <div className="lista-pratos">
         <CadNovoPrato />
-        <CardPrato
-          nome="Feijoada"
-          cozinha="Brasileira"
-          descricao="Feijão com carne de porco"
-          foto={feijoadaImg}
-          id={1}
-          />
-        <CardPrato
-          nome="Feijoada"
-          cozinha="Brasileira"
-          descricao="Feijão com carne de porco"
-          foto={feijoadaImg}
-          id={2}
-          />
-        <CardPrato
-          nome="Feijoada"
-          cozinha="Brasileira"
-          descricao="Feijão com carne de porco"
-          foto={feijoadaImg}
-          id={3}
-          />
-        <CardPrato
-          nome="Feijoada"
-          cozinha="Brasileira"
-          descricao="Feijão com carne de porco"
-          foto={feijoadaImg}
-          id={4}
-          />
-          </div>
+        {pratos.length &&
+          pratos.map((pratos, index) => (
+            <CardPrato
+              key={index}
+              id={pratos.id}
+              nome={pratos.nome}
+              cozinha={pratos.cozinha}
+              descricao={pratos.descricao_resumida}
+            />
+          ))}
+      </div>
     </div>
   );
 }

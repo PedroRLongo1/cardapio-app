@@ -6,7 +6,7 @@ interface CardPratoProps {
     nome: String,
     cozinha: String,
     descricao: String,
-    foto: any,
+    foto?: any,
     id: number
 }
 
@@ -39,7 +39,7 @@ const CardPrato: React.FC<CardPratoProps> = ({
                 </div>
               )}
             </div>
-            <img src={foto} alt="Feijoada brasileira" />
+            <img src={foto} alt=" " />
             <h2 className="nome-prato">{nome}</h2>
             <p className="cozinha-prato">{cozinha}</p>
             <p className="descricao-curta-prato">{descricao}</p>
