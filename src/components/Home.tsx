@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../estilos/Home.css";
-import banner from "../assets/banner.webp";
 import CadNovoPrato from "./CadNovoPrato";
-import api from "../services/api"
-import ListaPratos from "./ListaTodosPratos";
+import API from "../services/api"
 
 import CardPrato from "./CardPrato";
 
@@ -25,7 +23,7 @@ function Home() {
     () => {
 
       async function requestData() {
-        const request = await api.get('/pratos')
+        const request = await API.get('/pratos')
         const data = request.data
         setpratos(data)
       }
@@ -37,9 +35,6 @@ function Home() {
 
   return (
     <div className="home">
-      <div className="banner">
-        <img src={banner} alt="" />
-      </div>
       <h1>Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
       <div className="lista-pratos">
         <CadNovoPrato />

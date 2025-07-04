@@ -1,25 +1,67 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import "../estilos/DetalhesPrato.css";
-import { Link } from "react-router-dom";
+import API from "../services/api"
 
-function DetalhesPrato() {
+interface DetalhesPratoInterface {
+    nome?: String,
+    cozinha?: String,
+    descricao_detalhada?: String,
+    valor?: number
+    imagem?: any,
+    id?: number
+}
+
+const DetalhesPrato: React.FC = () => {
+
+  const [ prato, setpratos ] = useState<DetalhesPratoInterface>(
+      {
+        "id": 0,
+        "nome": "",
+        "cozinha": "",
+        "descricao_detalhada": "",
+        "imagem": "",
+        "valor": 0.00
+      }
+  )
+
+  const { id } = useParams();
+
+  useEffect(
+    () => {
+
+      async function requestData() {
+        const request = await API.get(`/pratos/${id}`)
+        const data = request.data
+        setpratos(data)
+      }
+      
+      if (id) {
+      requestData()
+      }
+
+    }, [id]
+    
+  )
+
+
   return (
   <div className="detalhes-prato">
     <div className="detalhes-prato-card">
       <div className="detahes-prato-card-sup">
         <div className="detalhes">
-          <h1>Feijoada</h1>
+          <h1>{prato.nome}</h1>
           <p>
-            <strong>Cozinha:</strong>Brasileira
+            <strong>Cozinha: </strong>{prato.cozinha}
           </p>
           <p>
-            <strong>Valor:</strong> R$28,00
+            <strong>Valor: R$:</strong>{prato.valor}
           </p>
         </div>
       </div>
       <div className="descricao">
         <p>
-          <strong>Descrição da sua experiência Gastronômica:</strong> Sinta o sabor inigualável de nossa feijoada, preparada com ingredientes selecionados e tempero único que te leva à sensação de estar desfrutando dessa experiência gastronômica em uma fazenda lá no interior.
+          <strong>Descrição da sua experiência Gastronômica: </strong>{prato.descricao_detalhada}
         </p>
       </div>
       <Link to="/" className="">

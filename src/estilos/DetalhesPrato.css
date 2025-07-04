@@ -67,9 +67,6 @@
     max-width: 40em;
     max-height: auto;
 }
-.detalhes {
-    margin: 0 0 0 40px;
-}
 .descricao {
     text-wrap: pretty;
     max-width: 30em;
