@@ -1,0 +1,67 @@
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url("../assets/banner.webp");
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+.login-card {
+    background-color: whitesmoke;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.data-input {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+.data-input label {
+    margin-bottom: 5px;
+}
+.input-error {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    border: red 2px solid;
+}
+.input-success {
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    border: green 2px solid;
+}
+.input-default{
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    width: 250px;
+    font-size: 16px;
+    border: black 1px solid;
+}
+.data-input input:hover {
+    background-color: #e7e7e7;
+}
+.login-button{
+    background-color: #007bff;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+.login-button:hover {
+    background-color: #0056b3;
+}
