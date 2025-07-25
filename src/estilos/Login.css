@@ -8,7 +8,7 @@
     background-position: center;
     padding: 20px;
 }
-.login-card {
+.container {
     background-color: whitesmoke;
     border-radius: 8px;
     display: flex;
@@ -19,12 +19,17 @@
 .data-input {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 10px;
+    width: 50%;
 }
 .data-input label {
     margin-bottom: 5px;
 }
-.input-error {
+.input-error  {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     background-color: #f7f7f7;
     border-radius: 8px;
@@ -32,7 +37,9 @@
     font-size: 16px;
     border: red 2px solid;
 }
-.input-success {
+.input-success  {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     background-color: #f7f7f7;
     border-radius: 8px;
@@ -40,7 +47,9 @@
     font-size: 16px;
     border: green 2px solid;
 }
-.input-default{
+.input-default {
+    display: flex;
+    justify-content: center;
     padding: 10px;
     background-color: #f7f7f7;
     border-radius: 8px;
@@ -53,10 +62,11 @@
 }
 .login-button{
     background-color: #007bff;
-    width: 100%;
     color: white;
     border: none;
-    padding: 10px 20px;
+    width: 270px;
+    padding: 10px;
+    margin: 10px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
