@@ -7,7 +7,7 @@ const useForm = <T extends Record<string, unknown>>(initialValues: T) => {
   const handleChange =
     (field: keyof T) => (e: React.ChangeEvent<HTMLInputElement>) => {
       setValues({ ...values, [field]: e.target.value });
-    };
+    };  
 
   const validate = (
     validators: Record<keyof T, (value: unknown) => string | null>,

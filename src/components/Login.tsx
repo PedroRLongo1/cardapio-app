@@ -27,7 +27,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const login = async () => {
-    const duration = 3000; // 3 seconds
+    const duration = 1000; // 1 seconds
 
     if (!validate) {
       return;
@@ -38,7 +38,7 @@ const Login: React.FC = () => {
         token: string;
         refreshToken: string;
         message: string;
-      }> ("/login", {
+      }>("/login", {
         email: values.email,
         senha: values.senha,
       });
@@ -54,9 +54,9 @@ const Login: React.FC = () => {
       });
       setTimeout(() => {
         navigate("/");
-      },duration);
-  } catch (error:unknown) {}
-
+      }, duration);
+    } catch (error: unknown) {}
+  };
   return (
     <Container>
       <h2>Login</h2>
@@ -76,7 +76,7 @@ const Login: React.FC = () => {
           onChange={handleChange("senha")}
         />
       </div>
-      <button className="login-button" type="button" onClick={() => {}}>
+      <button className="login-button" type="button" onClick={login}>
         Entrar
       </button>
     </Container>

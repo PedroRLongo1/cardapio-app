@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "../estilos/Home.css";
 import CadNovoPrato from "./CadNovoPrato";
 import API from "../services/api"
+import userNoneImage from "../assets/user-none-image.png";
 
 import CardPrato from "./CardPrato";
+import { AuthContext, AuthProvider } from "../context/authContext";
+import UserArea from "./UserArea";
 
 function Home() {
 
@@ -21,7 +24,6 @@ function Home() {
 
   useEffect(
     () => {
-
       async function requestData() {
         const request = await API.get('/pratos')
         const data = request.data
@@ -35,19 +37,24 @@ function Home() {
 
   return (
     <div className="home">
+      <AuthProvider>
+        <UserArea />
+      </AuthProvider>
       <h1>Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
       <div className="lista-pratos">
         <CadNovoPrato />
-        {pratos.length &&
-          pratos.map((pratos, index) => (
-            <CardPrato
-              key={index}
-              id={pratos.id}
-              nome={pratos.nome}
-              cozinha={pratos.cozinha}
-              descricao={pratos.descricao_resumida}
-            />
+        <AuthProvider>
+          {pratos.length &&
+            pratos.map((pratos, index) => (
+              <CardPrato
+                key={index}
+                id={pratos.id}
+                nome={pratos.nome}
+                cozinha={pratos.cozinha}
+                descricao={pratos.descricao_resumida}
+              />
           ))}
+        </AuthProvider>
       </div>
     </div>
   );
