@@ -42,8 +42,8 @@ function Home() {
       </AuthProvider>
       <h1>Bem vindo ao Restaurante Terra das Aguas SENAC - MS</h1>
       <div className="lista-pratos">
-        <CadNovoPrato />
         <AuthProvider>
+        <CadNovoPrato />
           {pratos.length &&
             pratos.map((pratos, index) => (
               <CardPrato
