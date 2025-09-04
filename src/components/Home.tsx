@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import "../estilos/Home.css";
 import CadNovoPrato from "./CadNovoPrato";
 import API from "../services/api"
-import userNoneImage from "../assets/user-none-image.png";
 
 import CardPrato from "./CardPrato";
 import { AuthContext, AuthProvider } from "../context/authContext";
