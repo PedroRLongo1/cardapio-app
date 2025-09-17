@@ -41,17 +41,16 @@
 .valores input {
     padding: 5px;
     margin: 5px;
+    border: 1px solid #000;
 }
 .valores textarea {
-    .valores textarea {
-        padding: 5px;
-        margin: 5px;
-        height: auto;
-        min-height: 60px;
-        resize: none;
-        line-height: 10px;
-    }
-    
+    padding: 5px;
+    margin: 5px;
+    height: auto;
+    min-height: 60px;
+    line-height: 20px;
+    resize: none;
+    border: 1px solid #000;
 }
 .valores p {
     font-size: smaller;

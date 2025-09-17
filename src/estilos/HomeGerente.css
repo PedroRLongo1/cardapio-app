@@ -1,0 +1,48 @@
+.home-gerente {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+}
+.tabela-pratos {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+thead {
+    border: black 2px solid;
+}
+th {
+    width: 25%;
+    border: 1px solid #464646;
+    text-align: left;
+}
+.botoes-acao {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+}
+td {
+    width: 25%;
+    border: 1px solid #464646;
+    text-align: left;
+}
+button {
+    display: flex;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #45a049;
+}
+a {
+    text-decoration: none;
+    color: white;
+    text-decoration: none;
+}
